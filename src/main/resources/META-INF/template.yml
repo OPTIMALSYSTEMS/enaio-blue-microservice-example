@@ -1,0 +1,10 @@
+# template configuration
+applications:
+ - name: test-service
+   type: microservice
+   profiles: prod,cloud,blue,debug
+   instances: 1
+   memory: 256M
+   port: 7991
+   path: .
+   

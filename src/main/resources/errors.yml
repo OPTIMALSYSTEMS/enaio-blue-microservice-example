@@ -1,0 +1,5 @@
+error-types:
+ - name: DEMO_ERROR
+   error-code: 444
+   error-message: "This is a DEMO error to demonstrate how to use custom error types."
+   http-status: 409

@@ -1,0 +1,23 @@
+spring:
+  jackson:
+    default-property-inclusion: NON_NULL
+
+management:
+  context-path: /manage
+
+ecm:
+  server:
+    balanced: '${enaio.dms.server}'
+    user: '${enaio.dms.username}'
+    password: '${enaio.dms.password}'
+
+#default values for single instantiation
+eureka:
+  instance:
+    status-page-url-path: /manage/info
+    health-check-url-path: /manage/health
+    metadata-map:
+      instanceId: ${spring.application.name}:${spring.application.index:${server.port}}
+  client:
+    service-url:
+      defaultZone: http://${APPLICATION_DOMAIN:${COMPUTERNAME:localhost}}:7261/eureka/
